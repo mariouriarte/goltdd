@@ -20,7 +20,7 @@ public class AxisY {
     public void addCellInCoordinateY(int index, Cell cell) {
 
         if (axisY.size() != (index + 1)) {
-            fillNullElementUntilIndex(index);
+            fillNullElementUpToIndex(index);
         }
 
         AxisX axisX = getAxisXInCoordinateY(index);
@@ -32,7 +32,7 @@ public class AxisY {
 
         int index = coordinate.y;
 
-        fillNullElementUntilIndex(index);
+        fillNullElementUpToIndex(index);
 
         AxisX axisX = getAxisXInCoordinateY(coordinate.y);
 
@@ -42,7 +42,7 @@ public class AxisY {
         allCells.addCell(cell);
     }
 
-    private void fillNullElementUntilIndex(int index) {
+    private void fillNullElementUpToIndex(int index) {
         if (axisY.size() == (index + 1)) {
             return;
         }

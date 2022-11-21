@@ -20,18 +20,15 @@ public class AxisX {
         int index = cell.coordinate.x;
 
         try {
-            Cell oldCell = axisX.get(index);
-
-            if (oldCell == null) {
-                axisX.set(index, cell);
-            }
+            axisX.get(index);
+            axisX.set(index, cell);
         } catch (IndexOutOfBoundsException e) {
-            fillNullElementUntilIndex(index);
+            fillNullElementUpToIndex(index);
             axisX.add(index, cell);
         }
     }
 
-    private void fillNullElementUntilIndex(int index) {
+    private void fillNullElementUpToIndex(int index) {
         for (int i = 0; i < index; i++) {
             try {
                 axisX.get(i);
