@@ -3,16 +3,14 @@ package org.blackcat.Entity;
 public class Plane {
 
     private AxisY axisY = new AxisY();
-    private int sidesNumberX, sidesNumberY;
+    private int sidesOfX, sidesOfY;
 
-    public void setSides(int x, int y) {
-        this.sidesNumberX = sidesNumberX;
-        this.sidesNumberY = sidesNumberY;
-
-//        initialize();
+    public Plane(int sidesOfX, int sidesOfY) {
+        this.sidesOfX = sidesOfX;
+        this.sidesOfY = sidesOfY;
     }
 
-//    private void initialize() {
+    //    private void initialize() {
 //        for (int j = 0; j < axisY.numberOfSides(); j++) {
 //            for (int i = 0; i < sidesNumberX; i++) {
 //                Cell cell = new Cell(new Coordinate(i, j));
@@ -20,6 +18,10 @@ public class Plane {
 //            }
 //        }
 //    }
+
+    public static Plane planeEmpty(int x, int y) {
+        return new Plane(x, y);
+    }
 
     public boolean isEmpty() {
         if (axisY.numberOfCells() > 0) {
