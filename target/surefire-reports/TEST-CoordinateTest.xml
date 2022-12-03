@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="CoordinateTest" time="0.007" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="CoordinateTest" time="0.005" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="19"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="BO"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-19-openjdk/lib"/>
-    <property name="sun.java.command" value="/home/mario/DEV/java/goltdd/target/surefire/surefirebooter13606644356781151426.jar /home/mario/DEV/java/goltdd/target/surefire 2022-12-02T22-08-20_932-jvmRun1 surefire974475214292916876tmp surefire_06922160498225422928tmp"/>
+    <property name="sun.java.command" value="/home/mario/DEV/java/goltdd/target/surefire/surefirebooter7913391132160971881.jar /home/mario/DEV/java/goltdd/target/surefire 2022-12-02T22-15-09_357-jvmRun1 surefire5232132594117254385tmp surefire_016718497456126742488tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/mario/DEV/java/goltdd/target/test-classes:/home/mario/DEV/java/goltdd/target/classes:/home/mario/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.9.0/junit-jupiter-params-5.9.0.jar:/home/mario/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.0/junit-jupiter-api-5.9.0.jar:/home/mario/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/mario/.m2/repository/org/junit/platform/junit-platform-commons/1.9.0/junit-platform-commons-1.9.0.jar:/home/mario/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -27,7 +27,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/home/mario/DEV/java/goltdd/target/surefire/surefirebooter13606644356781151426.jar"/>
+    <property name="surefire.real.class.path" value="/home/mario/DEV/java/goltdd/target/surefire/surefirebooter7913391132160971881.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="19.0.1+10"/>
     <property name="user.name" value="mario"/>
@@ -54,5 +54,5 @@
     <property name="java.class.version" value="63.0"/>
   </properties>
   <testcase name="new_coordinate_whit_negative_numbers_throws_exception" classname="CoordinateTest" time="0.002"/>
-  <testcase name="new_coordinate_has_true_coordinates" classname="CoordinateTest" time="0.003"/>
+  <testcase name="new_coordinate_has_true_coordinates" classname="CoordinateTest" time="0.001"/>
 </testsuite>
