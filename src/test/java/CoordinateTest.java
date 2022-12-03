@@ -20,7 +20,7 @@ public class CoordinateTest {
     }
 
     @Test
-    public void new_coordinate_has_true_coordinates() {
+    public void new_coordinate_has_true_xy_coordinates() {
         Coordinate coordinate = new Coordinate(2, 1);
 
         assertEquals(coordinate.x, 2);

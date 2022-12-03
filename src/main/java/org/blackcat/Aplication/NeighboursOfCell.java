@@ -1,70 +1,117 @@
 package org.blackcat.Aplication;
 
-import org.blackcat.Entity.Cell;
 import org.blackcat.Entity.Coordinate;
-import org.blackcat.Entity.Plane;
+import org.blackcat.Entity.SizeWorld;
 
 public class NeighboursOfCell {
-    Cell cell;
+    SizeWorld sizeWorld;
+    Coordinate coordinate;
 
-    public NeighboursOfCell(Cell cell, Plane plane) {
-        this.cell = cell;
+    public NeighboursOfCell(Coordinate coordinate, SizeWorld sizeWorld) {
+        this.coordinate = coordinate;
+        this.sizeWorld = sizeWorld;
     }
 
-
     public Coordinate neighbourTopLeft() {
-        int neighbourX = cell.getX() - 1;
-        int neighbourY = cell.getY() - 1;
+        int x = coordinate.x;
+        int y = coordinate.y;
 
-        return new Coordinate(neighbourX, neighbourY);
+        if (x == 0) {
+            x = sizeWorld.sizeX;
+        }
+
+        if (y == 0) {
+            y = sizeWorld.sizeY;
+        }
+
+        return new Coordinate(x -1, y -1);
     }
 
     public Coordinate neighbourTop() {
-        int neighbourX = cell.getX();
-        int neighbourY = cell.getY() - 1;
+        int y = coordinate.y;
 
-        return new Coordinate(neighbourX, neighbourY);
+        if (y == 0) {
+            y = sizeWorld.sizeY;
+        }
+
+        return new Coordinate(coordinate.x, y - 1);
     }
 
     public Coordinate neighbourTopRight() {
-        int neighbourX = cell.getX() + 1;
-        int neighbourY = cell.getY() - 1;
+        int x = coordinate.x;
+        int y = coordinate.y;
 
-        return new Coordinate(neighbourX, neighbourY);
+        if (x == (sizeWorld.sizeX - 1)) {
+            x = -1;
+        }
+
+        if (y == 0) {
+            y = sizeWorld.sizeY;
+        }
+
+        return new Coordinate(x + 1, y -1);
     }
 
     public Coordinate neighbourRight() {
-        int neighbourX = cell.getX() + 1;
-        int neighbourY = cell.getY();
+        int x = coordinate.x;
+        int y = coordinate.y;
 
-        return new Coordinate(neighbourX, neighbourY);
+        if (x == (sizeWorld.sizeX - 1)) {
+            x = -1;
+        }
+
+        return new Coordinate(x + 1, y);
     }
 
     public Coordinate neighbourBottomRight() {
-        int neighbourX = cell.getX() + 1;
-        int neighbourY = cell.getY() + 1;
+        int x = coordinate.x;
+        int y = coordinate.y;
 
-        return new Coordinate(neighbourX, neighbourY);
+        if (x == (sizeWorld.sizeX - 1)) {
+            x = -1;
+        }
+
+        if (y == (sizeWorld.sizeY - 1)) {
+            y = -1;
+        }
+
+        return new Coordinate(x + 1,  y + 1);
     }
 
     public Coordinate neighbourBottom() {
-        int neighbourX = cell.getX();
-        int neighbourY = cell.getY() + 1;
+        int x = coordinate.x;
+        int y = coordinate.y;
 
-        return new Coordinate(neighbourX, neighbourY);
+        if (y == (sizeWorld.sizeY - 1)) {
+            y = -1;
+        }
+
+        return new Coordinate(x, y + 1);
     }
 
     public Coordinate neighbourBottomLeft() {
-        int neighbourX = cell.getX() - 1;
-        int neighbourY = cell.getY() + 1;
+        int x = coordinate.x;
+        int y = coordinate.y;
 
-        return new Coordinate(neighbourX, neighbourY);
+        if (x == 0) {
+            x = sizeWorld.sizeX;
+        }
+
+        if (y == (sizeWorld.sizeY - 1)) {
+            y = -1;
+        }
+
+        return new Coordinate(x - 1, y + 1);
     }
 
     public Coordinate neighbourLeft() {
-        int neighbourX = cell.getX() - 1;
-        int neighbourY = cell.getY();
+        int x = coordinate.x;
+        int y = coordinate.y;
 
-        return new Coordinate(neighbourX, neighbourY);
+        if (x == 0) {
+            x = sizeWorld.sizeX;
+        }
+
+        return new Coordinate(x - 1, y);
     }
 }

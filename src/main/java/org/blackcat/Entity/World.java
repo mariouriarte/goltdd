@@ -1,13 +1,12 @@
 package org.blackcat.Entity;
 
-public class Plane {
+public class World {
 
     private AxisY axisY = new AxisY();
-    private int sidesOfX, sidesOfY;
+    final SizeWorld sizeWorld;
 
-    public Plane(int sidesOfX, int sidesOfY) {
-        this.sidesOfX = sidesOfX;
-        this.sidesOfY = sidesOfY;
+    public World(SizeWorld sizeWorld) {
+        this.sizeWorld = sizeWorld;
     }
 
     //    private void initialize() {
@@ -19,15 +18,12 @@ public class Plane {
 //        }
 //    }
 
-    public static Plane planeEmpty(int x, int y) {
-        return new Plane(x, y);
+    public static World planeEmpty(int x, int y) {
+        return new World(new SizeWorld(4, 4));
     }
 
     public boolean isEmpty() {
-        if (axisY.numberOfCells() > 0) {
-            return false;
-        }
-        return true;
+        return axisY.numberOfCells() < 1;
     }
 
     public void addCellInCoordinate(Coordinate coordinate) {

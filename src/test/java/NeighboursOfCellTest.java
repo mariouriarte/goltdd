@@ -1,7 +1,6 @@
 import org.blackcat.Aplication.NeighboursOfCell;
-import org.blackcat.Entity.Cell;
 import org.blackcat.Entity.Coordinate;
-import org.blackcat.Entity.Plane;
+import org.blackcat.Entity.SizeWorld;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -15,10 +14,10 @@ public class NeighboursOfCellTest {
     }
 
     private void prepareNeighbours() {
-        Plane plane = new Plane(4, 4);
-        Cell cell = new Cell(new Coordinate(1, 1));
-
-        neighbours = new NeighboursOfCell(cell, plane);
+        neighbours = new NeighboursOfCell(
+                new Coordinate(1, 1),
+                new SizeWorld(4, 4)
+        );
     }
 
     @Test
