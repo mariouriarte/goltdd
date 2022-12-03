@@ -3,11 +3,11 @@ package org.blackcat.Aplication;
 import org.blackcat.Entity.Coordinate;
 import org.blackcat.Entity.SizeWorld;
 
-public class NeighboursOfCell {
+public class NeighboursOfCoordinate {
     SizeWorld sizeWorld;
     Coordinate coordinate;
 
-    public NeighboursOfCell(Coordinate coordinate, SizeWorld sizeWorld) {
+    public NeighboursOfCoordinate(Coordinate coordinate, SizeWorld sizeWorld) {
         this.coordinate = coordinate;
         this.sizeWorld = sizeWorld;
     }

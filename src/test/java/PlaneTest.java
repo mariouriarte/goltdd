@@ -1,5 +1,6 @@
 import org.blackcat.Entity.Cell;
 import org.blackcat.Entity.Coordinate;
+import org.blackcat.Entity.SizeWorld;
 import org.blackcat.Entity.World;
 import org.junit.jupiter.api.Test;
 
@@ -10,14 +11,14 @@ public class PlaneTest {
 
     @Test
     public void a_new_plane_is_empty() {
-        World world = World.planeEmpty(4, 4);
+        World world = World.planeEmpty(new SizeWorld(4, 4));
         assertTrue(world.isEmpty());
     }
 
     @Test
     public void a_cell_can_be_added_to_the_plane() {
         Coordinate coordinate = new Coordinate(1, 2);
-        World world = World.planeEmpty(4, 4);
+        World world = World.planeEmpty(new SizeWorld(4, 4));
         world.addCellInCoordinate(coordinate);
 
         Cell cell = world.getCellInCoordinate(coordinate);
@@ -31,7 +32,7 @@ public class PlaneTest {
         Coordinate coordinate = new Coordinate(7, 1);
         Coordinate coordinate2 = new Coordinate(0, 1);
 
-        World world = World.planeEmpty(4, 4);
+        World world = World.planeEmpty(new SizeWorld(4, 4));
 
         world.addCellInCoordinate(coordinate);
         world.addCellInCoordinate(coordinate2);

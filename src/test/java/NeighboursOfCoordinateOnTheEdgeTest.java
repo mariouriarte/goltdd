@@ -1,20 +1,20 @@
-import org.blackcat.Aplication.NeighboursOfCell;
+import org.blackcat.Aplication.NeighboursOfCoordinate;
 import org.blackcat.Entity.Coordinate;
 import org.blackcat.Entity.SizeWorld;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class NeighboursOfCellOnTheEdgeTest {
+public class NeighboursOfCoordinateOnTheEdgeTest {
 
     SizeWorld sizeWorld;
 
-    public NeighboursOfCellOnTheEdgeTest() {
+    public NeighboursOfCoordinateOnTheEdgeTest() {
         sizeWorld = new SizeWorld(4, 4);
     }
 
-    private NeighboursOfCell prepareNeighboursForCoordinate(int x, int y) {
-        return new NeighboursOfCell(
+    private NeighboursOfCoordinate prepareNeighboursForCoordinate(int x, int y) {
+        return new NeighboursOfCoordinate(
                 new Coordinate(x, y),
                 sizeWorld
         );
@@ -22,7 +22,7 @@ public class NeighboursOfCellOnTheEdgeTest {
 
     @Test
     public void coordinate_has_neighbours_edge_top_left() {
-        NeighboursOfCell neighbour = prepareNeighboursForCoordinate(0,0);
+        NeighboursOfCoordinate neighbour = prepareNeighboursForCoordinate(0,0);
 
         Coordinate coordinateNeighbour = neighbour.neighbourTopLeft();
 
@@ -32,7 +32,7 @@ public class NeighboursOfCellOnTheEdgeTest {
 
     @Test
     public void coordinate_has_neighbours_edge_top() {
-        NeighboursOfCell neighbour = prepareNeighboursForCoordinate(1,0);
+        NeighboursOfCoordinate neighbour = prepareNeighboursForCoordinate(1,0);
 
         Coordinate coordinateNeighbour = neighbour.neighbourTop();
 
@@ -42,7 +42,7 @@ public class NeighboursOfCellOnTheEdgeTest {
 
     @Test
     public void coordinate_has_neighbours_edge_top_right() {
-        NeighboursOfCell neighbour = prepareNeighboursForCoordinate(sizeWorld.sizeX -1,0);
+        NeighboursOfCoordinate neighbour = prepareNeighboursForCoordinate(sizeWorld.sizeX -1,0);
 
         Coordinate coordinateNeighbour = neighbour.neighbourTopRight();
 
@@ -52,7 +52,7 @@ public class NeighboursOfCellOnTheEdgeTest {
 
     @Test
     public void coordinate_has_neighbours_edge_right() {
-        NeighboursOfCell neighbour = prepareNeighboursForCoordinate(sizeWorld.sizeX -1, 1);
+        NeighboursOfCoordinate neighbour = prepareNeighboursForCoordinate(sizeWorld.sizeX -1, 1);
 
         Coordinate coordinateNeighbour = neighbour.neighbourRight();
 
@@ -62,7 +62,7 @@ public class NeighboursOfCellOnTheEdgeTest {
 
     @Test
     public void coordinate_has_neighbours_edge_bottom_right() {
-        NeighboursOfCell neighbour = prepareNeighboursForCoordinate(sizeWorld.sizeX -1,sizeWorld.sizeY - 1);
+        NeighboursOfCoordinate neighbour = prepareNeighboursForCoordinate(sizeWorld.sizeX -1,sizeWorld.sizeY - 1);
 
         Coordinate coordinateNeighbour = neighbour.neighbourBottomRight();
 
@@ -72,7 +72,7 @@ public class NeighboursOfCellOnTheEdgeTest {
 
     @Test
     public void coordinate_has_neighbours_edge_bottom() {
-        NeighboursOfCell neighbour = prepareNeighboursForCoordinate(1,sizeWorld.sizeY - 1);
+        NeighboursOfCoordinate neighbour = prepareNeighboursForCoordinate(1,sizeWorld.sizeY - 1);
 
         Coordinate coordinateNeighbour = neighbour.neighbourBottom();
 
@@ -82,7 +82,7 @@ public class NeighboursOfCellOnTheEdgeTest {
 
     @Test
     public void coordinate_has_neighbours_edge_bottom_left() {
-        NeighboursOfCell neighbour = prepareNeighboursForCoordinate(0,sizeWorld.sizeY - 1);
+        NeighboursOfCoordinate neighbour = prepareNeighboursForCoordinate(0,sizeWorld.sizeY - 1);
 
         Coordinate coordinateNeighbour = neighbour.neighbourBottomLeft();
 
@@ -92,7 +92,7 @@ public class NeighboursOfCellOnTheEdgeTest {
 
     @Test
     public void coordinate_has_neighbours_edge_left() {
-        NeighboursOfCell neighbour = prepareNeighboursForCoordinate(0,1);
+        NeighboursOfCoordinate neighbour = prepareNeighboursForCoordinate(0,1);
 
         Coordinate coordinateNeighbour = neighbour.neighbourLeft();
 

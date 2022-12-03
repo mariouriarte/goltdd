@@ -18,8 +18,8 @@ public class World {
 //        }
 //    }
 
-    public static World planeEmpty(int x, int y) {
-        return new World(new SizeWorld(4, 4));
+    public static World planeEmpty(SizeWorld sizeWorld) {
+        return new World(sizeWorld);
     }
 
     public boolean isEmpty() {

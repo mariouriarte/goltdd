@@ -1,20 +1,20 @@
-import org.blackcat.Aplication.NeighboursOfCell;
+import org.blackcat.Aplication.NeighboursOfCoordinate;
 import org.blackcat.Entity.Coordinate;
 import org.blackcat.Entity.SizeWorld;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class NeighboursOfCellTest {
+public class NeighboursOfCoordinateTest {
 
-    NeighboursOfCell neighbours;
+    NeighboursOfCoordinate neighbours;
 
-    public NeighboursOfCellTest() {
+    public NeighboursOfCoordinateTest() {
         prepareNeighbours();
     }
 
     private void prepareNeighbours() {
-        neighbours = new NeighboursOfCell(
+        neighbours = new NeighboursOfCoordinate(
                 new Coordinate(1, 1),
                 new SizeWorld(4, 4)
         );
