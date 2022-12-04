@@ -45,4 +45,18 @@ public class NeighboursOfCellInCoordinate {
 
         return numLives;
     }
+
+    public int numberOfDiedCells() {
+        List<Cell> neighbours = getNeighbours();
+
+        int numDeads = 0;
+
+        for (Cell cell : neighbours) {
+            if (!cell.itsAlive()) {
+                numDeads++;
+            }
+        }
+
+        return numDeads;
+    }
 }
