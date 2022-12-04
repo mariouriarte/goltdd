@@ -2,8 +2,8 @@ package org.blackcat.Entity;
 import java.util.Random;
 
 public class Cell {
-    private int state;
-    private int stateNextGeneration;
+    private boolean state;
+    private boolean stateNextGeneration;
     private boolean verified = false;
 
     final Coordinate coordinate;
@@ -11,11 +11,20 @@ public class Cell {
     public Cell(Coordinate coordinate) {
         this.coordinate = coordinate;
 
-        Random ran = new Random();
-        this.state = ran.nextInt(2);
+        randomizeState();
     }
 
-    public int getState() {
+    private void randomizeState() {
+        Random ran = new Random();
+
+        if (1 == ran.nextInt(2)) {
+            this.state = true;
+        } else {
+            this.state = false;
+        }
+    }
+
+    public boolean getState() {
         return state;
     }
 
@@ -31,12 +40,12 @@ public class Cell {
         return coordinate;
     }
 
-    public void kill() {
-        stateNextGeneration = 0;
+    public void dead() {
+        stateNextGeneration = false;
     }
 
-    public void aliveAgain() {
-        stateNextGeneration = 1;
+    public void live() {
+        stateNextGeneration = true;
     }
 
     public void setVerified(boolean val) {
@@ -47,8 +56,8 @@ public class Cell {
         return verified;
     }
 
-    public void setStateNextGeneration(int stateNextGeneration) {
-        this.stateNextGeneration = stateNextGeneration;
+    public void setStateNextGeneration(boolean state) {
+        this.stateNextGeneration = state;
     }
 
     public void changeGeneration() {

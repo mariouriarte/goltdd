@@ -9,16 +9,15 @@ public class World {
         this.sizeWorld = sizeWorld;
     }
 
-    //    private void initialize() {
-//        for (int j = 0; j < axisY.numberOfSides(); j++) {
-//            for (int i = 0; i < sidesNumberX; i++) {
-//                Cell cell = new Cell(new Coordinate(i, j));
-//                axisY.addCellInCoordinateY(j, cell);
-//            }
-//        }
-//    }
+    public void populateAll() {
+        for (int j = 0; j < sizeWorld.sizeY; j++) {
+            for (int i = 0; i < sizeWorld.sizeX; i++) {
+                addCellInCoordinate(new Coordinate(i, j));
+            }
+        }
+    }
 
-    public static World planeEmpty(SizeWorld sizeWorld) {
+    public static World empty(SizeWorld sizeWorld) {
         return new World(sizeWorld);
     }
 

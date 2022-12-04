@@ -7,18 +7,18 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class PlaneTest {
+public class WorldTest {
 
     @Test
     public void a_new_plane_is_empty() {
-        World world = World.planeEmpty(new SizeWorld(4, 4));
+        World world = World.empty(new SizeWorld(4, 4));
         assertTrue(world.isEmpty());
     }
 
     @Test
     public void a_cell_can_be_added_to_the_plane() {
         Coordinate coordinate = new Coordinate(1, 2);
-        World world = World.planeEmpty(new SizeWorld(4, 4));
+        World world = World.empty(new SizeWorld(4, 4));
         world.addCellInCoordinate(coordinate);
 
         Cell cell = world.getCellInCoordinate(coordinate);
@@ -32,7 +32,7 @@ public class PlaneTest {
         Coordinate coordinate = new Coordinate(7, 1);
         Coordinate coordinate2 = new Coordinate(0, 1);
 
-        World world = World.planeEmpty(new SizeWorld(4, 4));
+        World world = World.empty(new SizeWorld(4, 4));
 
         world.addCellInCoordinate(coordinate);
         world.addCellInCoordinate(coordinate2);
@@ -45,5 +45,11 @@ public class PlaneTest {
 
         assertEquals(0, cell2.getX());
         assertEquals(1, cell2.getY());
+    }
+
+    @Test
+    public void populate_world_empty_whit_cells() {
+        World world = World.empty(new SizeWorld(4, 4));
+        world.populateAll();
     }
 }
