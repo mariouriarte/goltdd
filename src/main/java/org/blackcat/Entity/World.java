@@ -3,13 +3,13 @@ package org.blackcat.Entity;
 public class World {
 
     private AxisY axisY = new AxisY();
-    final SizeWorld sizeWorld;
+    public final SizeWorld sizeWorld;
 
     public World(SizeWorld sizeWorld) {
         this.sizeWorld = sizeWorld;
     }
 
-    public void populateAll() {
+    public void populateAllCells() {
         for (int j = 0; j < sizeWorld.sizeY; j++) {
             for (int i = 0; i < sizeWorld.sizeX; i++) {
                 addCellInCoordinate(new Coordinate(i, j));
@@ -22,7 +22,7 @@ public class World {
     }
 
     public boolean isEmpty() {
-        return axisY.numberOfCells() < 1;
+        return axisY.countCells() < 1;
     }
 
     public void addCellInCoordinate(Coordinate coordinate) {
@@ -35,5 +35,9 @@ public class World {
 
     public AxisY getAxisY() {
         return axisY;
+    }
+
+    public int countCells() {
+        return axisY.countCells();
     }
 }

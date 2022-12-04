@@ -1,20 +1,20 @@
-import org.blackcat.Aplication.NeighboursOfCoordinate;
+import org.blackcat.Aplication.CoordinatesOfNeighbours;
 import org.blackcat.Entity.Coordinate;
 import org.blackcat.Entity.SizeWorld;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class NeighboursOfCoordinateTest {
+public class CoordinatesOfNeighboursTest {
 
-    NeighboursOfCoordinate neighbours;
+    CoordinatesOfNeighbours neighbours;
 
-    public NeighboursOfCoordinateTest() {
+    public CoordinatesOfNeighboursTest() {
         prepareNeighbours();
     }
 
     private void prepareNeighbours() {
-        neighbours = new NeighboursOfCoordinate(
+        neighbours = new CoordinatesOfNeighbours(
                 new Coordinate(1, 1),
                 new SizeWorld(4, 4)
         );

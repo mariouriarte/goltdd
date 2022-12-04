@@ -30,11 +30,11 @@ public class AxisY {
 
     public void addCellInCoordinate(Coordinate coordinate) {
 
-        int index = coordinate.y;
+        int y = coordinate.y;
 
-        fillNullElementUpToIndex(index);
+        fillNullElementUpToIndex(y);
 
-        AxisX axisX = getAxisXInCoordinateY(coordinate.y);
+        AxisX axisX = getAxisXInCoordinateY(y);
 
         Cell cell = new Cell(coordinate);
 
@@ -59,9 +59,7 @@ public class AxisY {
     public Cell getCellInCoordinate(Coordinate coordinate) {
         AxisX ejeY = getAxisXInCoordinateY(coordinate.y);
 
-        Cell cell = ejeY.getCellInX(coordinate.x);
-
-        return cell;
+        return ejeY.getCellInX(coordinate.x);
     }
 
     public AxisX getAxisXInCoordinateY(int index) {
@@ -81,15 +79,7 @@ public class AxisY {
         return allCells;
     }
 
-    public int numberOfCells() {
+    public int countCells() {
         return allCells.getAxisX().size();
-    }
-
-    public int numberOfSides() {
-        if (axisY.size() == 0) {
-            return 0;
-        }
-
-        return axisY.size();
     }
 }

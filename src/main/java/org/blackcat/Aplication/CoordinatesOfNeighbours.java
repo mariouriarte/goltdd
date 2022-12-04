@@ -3,11 +3,14 @@ package org.blackcat.Aplication;
 import org.blackcat.Entity.Coordinate;
 import org.blackcat.Entity.SizeWorld;
 
-public class NeighboursOfCoordinate {
+import java.util.ArrayList;
+import java.util.List;
+
+public class CoordinatesOfNeighbours {
     SizeWorld sizeWorld;
     Coordinate coordinate;
 
-    public NeighboursOfCoordinate(Coordinate coordinate, SizeWorld sizeWorld) {
+    public CoordinatesOfNeighbours(Coordinate coordinate, SizeWorld sizeWorld) {
         this.coordinate = coordinate;
         this.sizeWorld = sizeWorld;
     }
@@ -113,5 +116,20 @@ public class NeighboursOfCoordinate {
         }
 
         return new Coordinate(x - 1, y);
+    }
+
+    public List<Coordinate> getAll() {
+        List<Coordinate> coordinates = new ArrayList<>();
+
+        coordinates.add(neighbourTopLeft());
+        coordinates.add(neighbourTop());
+        coordinates.add(neighbourTopRight());
+        coordinates.add(neighbourRight());
+        coordinates.add(neighbourBottomRight());
+        coordinates.add(neighbourBottom());
+        coordinates.add(neighbourBottomLeft());
+        coordinates.add(neighbourLeft());
+
+        return coordinates;
     }
 }

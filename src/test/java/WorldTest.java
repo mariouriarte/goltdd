@@ -49,7 +49,12 @@ public class WorldTest {
 
     @Test
     public void populate_world_empty_whit_cells() {
-        World world = World.empty(new SizeWorld(4, 4));
-        world.populateAll();
+        SizeWorld sizeWorld = new SizeWorld(4, 5);
+        int totalExpected = sizeWorld.sizeX * sizeWorld.sizeY;
+
+        World world = World.empty(sizeWorld);
+        world.populateAllCells();
+
+        assertEquals(totalExpected, world.countCells());
     }
 }

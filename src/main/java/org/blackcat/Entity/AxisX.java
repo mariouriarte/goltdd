@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AxisX {
-    private List<Cell> axisX = new ArrayList();
+    private List<Cell> axisX = new ArrayList<>();
 
     public List<Cell> getAxisX() {
         return axisX;
@@ -17,14 +17,14 @@ public class AxisX {
     }
 
     public void addInCoordinateX(Cell cell) {
-        int index = cell.coordinate.x;
+        int x = cell.coordinate.x;
 
         try {
-            axisX.get(index);
-            axisX.set(index, cell);
+            axisX.get(x);
+            axisX.set(x, cell);
         } catch (IndexOutOfBoundsException e) {
-            fillNullElementUpToIndex(index);
-            axisX.add(index, cell);
+            fillNullElementUpToIndex(x);
+            axisX.add(x, cell);
         }
     }
 
@@ -36,10 +36,6 @@ public class AxisX {
                 axisX.add(null);
             }
         }
-    }
-
-    private boolean isValidIndex(int index) {
-        return index >= 0 && index < axisX.size();
     }
 
     public Cell getCellInX(int index){

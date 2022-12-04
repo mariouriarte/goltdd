@@ -1,20 +1,20 @@
-import org.blackcat.Aplication.NeighboursOfCoordinate;
+import org.blackcat.Aplication.CoordinatesOfNeighbours;
 import org.blackcat.Entity.Coordinate;
 import org.blackcat.Entity.SizeWorld;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class NeighboursOfCoordinateOnTheEdgeTest {
+public class CoordinatesOfNeighboursOnTheEdgeTest {
 
     SizeWorld sizeWorld;
 
-    public NeighboursOfCoordinateOnTheEdgeTest() {
+    public CoordinatesOfNeighboursOnTheEdgeTest() {
         sizeWorld = new SizeWorld(4, 4);
     }
 
-    private NeighboursOfCoordinate prepareNeighboursForCoordinate(int x, int y) {
-        return new NeighboursOfCoordinate(
+    private CoordinatesOfNeighbours prepareNeighboursForCoordinate(int x, int y) {
+        return new CoordinatesOfNeighbours(
                 new Coordinate(x, y),
                 sizeWorld
         );
@@ -22,7 +22,7 @@ public class NeighboursOfCoordinateOnTheEdgeTest {
 
     @Test
     public void coordinate_has_neighbours_edge_top_left() {
-        NeighboursOfCoordinate neighbour = prepareNeighboursForCoordinate(0,0);
+        CoordinatesOfNeighbours neighbour = prepareNeighboursForCoordinate(0,0);
 
         Coordinate coordinateNeighbour = neighbour.neighbourTopLeft();
 
@@ -32,7 +32,7 @@ public class NeighboursOfCoordinateOnTheEdgeTest {
 
     @Test
     public void coordinate_has_neighbours_edge_top() {
-        NeighboursOfCoordinate neighbour = prepareNeighboursForCoordinate(1,0);
+        CoordinatesOfNeighbours neighbour = prepareNeighboursForCoordinate(1,0);
 
         Coordinate coordinateNeighbour = neighbour.neighbourTop();
 
@@ -42,7 +42,7 @@ public class NeighboursOfCoordinateOnTheEdgeTest {
 
     @Test
     public void coordinate_has_neighbours_edge_top_right() {
-        NeighboursOfCoordinate neighbour = prepareNeighboursForCoordinate(sizeWorld.sizeX -1,0);
+        CoordinatesOfNeighbours neighbour = prepareNeighboursForCoordinate(sizeWorld.sizeX -1,0);
 
         Coordinate coordinateNeighbour = neighbour.neighbourTopRight();
 
@@ -52,7 +52,7 @@ public class NeighboursOfCoordinateOnTheEdgeTest {
 
     @Test
     public void coordinate_has_neighbours_edge_right() {
-        NeighboursOfCoordinate neighbour = prepareNeighboursForCoordinate(sizeWorld.sizeX -1, 1);
+        CoordinatesOfNeighbours neighbour = prepareNeighboursForCoordinate(sizeWorld.sizeX -1, 1);
 
         Coordinate coordinateNeighbour = neighbour.neighbourRight();
 
@@ -62,7 +62,7 @@ public class NeighboursOfCoordinateOnTheEdgeTest {
 
     @Test
     public void coordinate_has_neighbours_edge_bottom_right() {
-        NeighboursOfCoordinate neighbour = prepareNeighboursForCoordinate(sizeWorld.sizeX -1,sizeWorld.sizeY - 1);
+        CoordinatesOfNeighbours neighbour = prepareNeighboursForCoordinate(sizeWorld.sizeX -1,sizeWorld.sizeY - 1);
 
         Coordinate coordinateNeighbour = neighbour.neighbourBottomRight();
 
@@ -72,7 +72,7 @@ public class NeighboursOfCoordinateOnTheEdgeTest {
 
     @Test
     public void coordinate_has_neighbours_edge_bottom() {
-        NeighboursOfCoordinate neighbour = prepareNeighboursForCoordinate(1,sizeWorld.sizeY - 1);
+        CoordinatesOfNeighbours neighbour = prepareNeighboursForCoordinate(1,sizeWorld.sizeY - 1);
 
         Coordinate coordinateNeighbour = neighbour.neighbourBottom();
 
@@ -82,7 +82,7 @@ public class NeighboursOfCoordinateOnTheEdgeTest {
 
     @Test
     public void coordinate_has_neighbours_edge_bottom_left() {
-        NeighboursOfCoordinate neighbour = prepareNeighboursForCoordinate(0,sizeWorld.sizeY - 1);
+        CoordinatesOfNeighbours neighbour = prepareNeighboursForCoordinate(0,sizeWorld.sizeY - 1);
 
         Coordinate coordinateNeighbour = neighbour.neighbourBottomLeft();
 
@@ -92,7 +92,7 @@ public class NeighboursOfCoordinateOnTheEdgeTest {
 
     @Test
     public void coordinate_has_neighbours_edge_left() {
-        NeighboursOfCoordinate neighbour = prepareNeighboursForCoordinate(0,1);
+        CoordinatesOfNeighbours neighbour = prepareNeighboursForCoordinate(0,1);
 
         Coordinate coordinateNeighbour = neighbour.neighbourLeft();
 
