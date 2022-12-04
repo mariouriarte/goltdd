@@ -2,7 +2,7 @@ package org.blackcat.Entity;
 import java.util.Random;
 
 public class Cell {
-    private boolean state;
+    private boolean itsAlive;
     private boolean stateNextGeneration;
     private boolean verified = false;
 
@@ -11,21 +11,25 @@ public class Cell {
     public Cell(Coordinate coordinate) {
         this.coordinate = coordinate;
 
-        randomizeState();
+        randomizeInitialState();
     }
 
-    private void randomizeState() {
+    private void randomizeInitialState() {
         Random ran = new Random();
 
-        if (1 == ran.nextInt(2)) {
-            this.state = true;
-        } else {
-            this.state = false;
-        }
+        this.itsAlive = (1 == ran.nextInt(2));
     }
 
-    public boolean getState() {
-        return state;
+    public boolean itsAlive() {
+        return itsAlive;
+    }
+
+    public void die() {
+        itsAlive = false;
+    }
+
+    public void live() {
+        itsAlive = true;
     }
 
     public int getX() {
@@ -40,27 +44,23 @@ public class Cell {
         return coordinate;
     }
 
-    public void dead() {
+    public void dieNextGeneration() {
         stateNextGeneration = false;
     }
 
-    public void live() {
+    public void liveNextGeneration() {
         stateNextGeneration = true;
     }
 
-    public void setVerified(boolean val) {
+    public void changeGeneration() {
+        itsAlive = stateNextGeneration;
+    }
+
+    public void verified(boolean val) {
         verified = val;
     }
 
-    public boolean getVerified() {
+    public boolean itsVerified() {
         return verified;
-    }
-
-    public void setStateNextGeneration(boolean state) {
-        this.stateNextGeneration = state;
-    }
-
-    public void changeGeneration() {
-        state = stateNextGeneration;
     }
 }
