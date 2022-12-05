@@ -5,7 +5,7 @@ public class World {
     private AxisY axisY = new AxisY();
     public final SizeWorld sizeWorld;
 
-    public World(SizeWorld sizeWorld) {
+    private World(SizeWorld sizeWorld) {
         this.sizeWorld = sizeWorld;
     }
 
@@ -39,5 +39,9 @@ public class World {
 
     public int countCells() {
         return axisY.countCells();
+    }
+
+    public AxisX getAllCells() {
+        return axisY.getAllCells();
     }
 }

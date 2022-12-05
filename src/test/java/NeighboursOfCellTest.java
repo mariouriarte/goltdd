@@ -1,5 +1,5 @@
 import org.blackcat.Aplication.CoordinatesOfNeighbours;
-import org.blackcat.Aplication.NeighboursOfCellInCoordinate;
+import org.blackcat.Aplication.NeighboursOfCell;
 import org.blackcat.Entity.Coordinate;
 import org.blackcat.Entity.SizeWorld;
 import org.blackcat.Entity.World;
@@ -9,7 +9,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class NeighboursOfCellInCoordinateTest {
+public class NeighboursOfCellTest {
 
     @Test
     public void a_cell_has_all_lives_neighbours() {
@@ -28,7 +28,7 @@ public class NeighboursOfCellInCoordinateTest {
             world.getCellInCoordinate(item).live();
         }
 
-        NeighboursOfCellInCoordinate neighbours = new NeighboursOfCellInCoordinate(world);
+        NeighboursOfCell neighbours = new NeighboursOfCell(world);
         neighbours.setCoordinate(coordinate);
 
         assertEquals(8, neighbours.numberOfLivesCells());
@@ -51,7 +51,7 @@ public class NeighboursOfCellInCoordinateTest {
             world.getCellInCoordinate(item).die();
         }
 
-        NeighboursOfCellInCoordinate neighbours = new NeighboursOfCellInCoordinate(world);
+        NeighboursOfCell neighbours = new NeighboursOfCell(world);
         neighbours.setCoordinate(coordinate);
 
         assertEquals(0, neighbours.numberOfLivesCells());
@@ -77,7 +77,7 @@ public class NeighboursOfCellInCoordinateTest {
         world.getCellInCoordinate(coordinates.neighbourBottomLeft()).die();
         world.getCellInCoordinate(coordinates.neighbourLeft()).die();
 
-        NeighboursOfCellInCoordinate neighbours = new NeighboursOfCellInCoordinate(world);
+        NeighboursOfCell neighbours = new NeighboursOfCell(world);
         neighbours.setCoordinate(coordinate);
 
         assertEquals(4, neighbours.numberOfLivesCells());

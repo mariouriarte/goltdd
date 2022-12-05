@@ -56,7 +56,7 @@ public class Cell {
         itsAlive = stateNextGeneration;
     }
 
-    public void verified(boolean val) {
+    public void setVerified(boolean val) {
         verified = val;
     }
 

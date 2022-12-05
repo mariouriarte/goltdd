@@ -7,11 +7,11 @@ import org.blackcat.Entity.World;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NeighboursOfCellInCoordinate {
+public class NeighboursOfCell {
     private final World world;
     private Coordinate coordinate;
 
-    public NeighboursOfCellInCoordinate(World world) {
+    public NeighboursOfCell(World world) {
         this.world = world;
     }
 
