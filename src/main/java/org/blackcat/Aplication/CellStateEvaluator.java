@@ -5,8 +5,7 @@ import org.blackcat.Entity.World;
 
 public class CellStateEvaluator {
 
-    private CellStateEvaluator() {
-    }
+    private CellStateEvaluator() {}
 
     public static void evaluate(Cell cell, World world) {
         NeighboursOfCell neighbours = new NeighboursOfCell(world);

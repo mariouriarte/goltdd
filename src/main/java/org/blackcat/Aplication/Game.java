@@ -1,9 +1,10 @@
 package org.blackcat.Aplication;
 
-import org.blackcat.Aplication.Exception.NotSuchCellException;
 import org.blackcat.Entity.Cell;
 import org.blackcat.Entity.SizeWorld;
 import org.blackcat.Entity.World;
+import org.blackcat.Infrastructure.ClearConsoleScreen;
+import org.blackcat.Infrastructure.PrintWorld;
 
 import java.util.Collections;
 import java.util.List;
@@ -32,16 +33,15 @@ public class Game {
 
         for (int i = 0; i < numGenerations; i++) {
 
+            print();
+
             try {
                 sleep(timeSleep);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
-            try {
-                evaluateAllCells();
-            } catch (NotSuchCellException ignored) {
-            }
+            evaluateAllCells();
 
             ChangeGenerationOfCells.evolve(world);
         }
@@ -57,6 +57,8 @@ public class Game {
     }
 
     private void print() {
-
+        ClearConsoleScreen.clear();
+        PrintWorld print = new PrintWorld(world.getAxisY());
+        print.print();
     }
 }
