@@ -33,6 +33,7 @@ public class Game {
 
         for (int i = 0; i < numGenerations; i++) {
 
+            world.setGeneration(i);
             print();
 
             try {
@@ -58,7 +59,7 @@ public class Game {
 
     private void print() {
         ClearConsoleScreen.clear();
-        PrintWorld print = new PrintWorld(world.getAxisY());
+        PrintWorld print = new PrintWorld(world);
         print.print();
     }
 }

@@ -6,6 +6,7 @@ public class World {
 
     private AxisY axisY = new AxisY();
     public final SizeWorld sizeWorld;
+    private int generation;
 
     private World(SizeWorld sizeWorld) {
         this.sizeWorld = sizeWorld;
@@ -45,5 +46,13 @@ public class World {
 
     public List<Cell> getAllCells() {
         return axisY.getAllCells();
+    }
+
+    public void setGeneration(int generation) {
+        this.generation = generation;
+    }
+
+    public int generation() {
+        return generation;
     }
 }
