@@ -32,7 +32,7 @@ public class NeighboursOfCell {
         return neighbours;
     }
 
-    public int numberOfLivesCells() {
+    public int numberOfLives() {
         List<Cell> neighbours = getNeighbours();
 
         int numLives = 0;
@@ -46,17 +46,17 @@ public class NeighboursOfCell {
         return numLives;
     }
 
-    public int numberOfDiedCells() {
+    public int numberOfDied() {
         List<Cell> neighbours = getNeighbours();
 
-        int numDeads = 0;
+        int numberOfDied = 0;
 
         for (Cell cell : neighbours) {
             if (!cell.itsAlive()) {
-                numDeads++;
+                numberOfDied++;
             }
         }
 
-        return numDeads;
+        return numberOfDied;
     }
 }

@@ -75,8 +75,8 @@ public class AxisY {
         return axisY;
     }
 
-    public AxisX getAllCells() {
-        return allCells;
+    public List<Cell> getAllCells() {
+        return allCells.getList();
     }
 
     public int countCells() {

@@ -1,8 +1,12 @@
 package org.blackcat.Aplication;
 
 import org.blackcat.Aplication.Exception.NotSuchCellException;
+import org.blackcat.Entity.Cell;
 import org.blackcat.Entity.SizeWorld;
 import org.blackcat.Entity.World;
+
+import java.util.Collections;
+import java.util.List;
 
 import static java.lang.Thread.sleep;
 
@@ -35,17 +39,21 @@ public class Game {
             }
 
             try {
-                iterateGenerators();
+                evaluateAllCells();
             } catch (NotSuchCellException ignored) {
             }
 
-            //UnverifiedAllCells.unverified(plane);
-            //ChangeGenerationCells.evolve(plane);
+            ChangeGenerationOfCells.evolve(world);
         }
     }
 
-    private void iterateGenerators() {
+    private void evaluateAllCells() {
+        List<Cell> cells = world.getAllCells();
+        Collections.shuffle(cells);
 
+        for (Cell cell: cells) {
+            CellStateEvaluator.evaluate(cell, world);
+        }
     }
 
     private void print() {

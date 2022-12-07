@@ -40,5 +40,4 @@ public class CellTest {
 
         assertFalse(cell.itsAlive());
     }
-
 }

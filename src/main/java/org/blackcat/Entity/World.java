@@ -1,5 +1,7 @@
 package org.blackcat.Entity;
 
+import java.util.List;
+
 public class World {
 
     private AxisY axisY = new AxisY();
@@ -41,7 +43,7 @@ public class World {
         return axisY.countCells();
     }
 
-    public AxisX getAllCells() {
+    public List<Cell> getAllCells() {
         return axisY.getAllCells();
     }
 }

@@ -31,7 +31,7 @@ public class NeighboursOfCellTest {
         NeighboursOfCell neighbours = new NeighboursOfCell(world);
         neighbours.setCoordinate(coordinate);
 
-        assertEquals(8, neighbours.numberOfLivesCells());
+        assertEquals(8, neighbours.numberOfLives());
     }
 
     @Test
@@ -54,7 +54,7 @@ public class NeighboursOfCellTest {
         NeighboursOfCell neighbours = new NeighboursOfCell(world);
         neighbours.setCoordinate(coordinate);
 
-        assertEquals(0, neighbours.numberOfLivesCells());
+        assertEquals(0, neighbours.numberOfLives());
     }
 
     @Test
@@ -80,7 +80,7 @@ public class NeighboursOfCellTest {
         NeighboursOfCell neighbours = new NeighboursOfCell(world);
         neighbours.setCoordinate(coordinate);
 
-        assertEquals(4, neighbours.numberOfLivesCells());
-        assertEquals(4, neighbours.numberOfDiedCells());
+        assertEquals(4, neighbours.numberOfLives());
+        assertEquals(4, neighbours.numberOfDied());
     }
 }

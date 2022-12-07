@@ -46,7 +46,7 @@ public class AxisX {
         }
     }
 
-    public List<Cell> getAxis() {
+    public List<Cell> getList() {
         return axisX;
     }
 }

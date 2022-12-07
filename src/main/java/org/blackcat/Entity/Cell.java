@@ -4,7 +4,6 @@ import java.util.Random;
 public class Cell {
     private boolean itsAlive;
     private boolean stateNextGeneration;
-    private boolean verified = false;
 
     final Coordinate coordinate;
 
@@ -51,16 +50,12 @@ public class Cell {
     public void liveNextGeneration() {
         stateNextGeneration = true;
     }
+    public boolean itsAliveNextGeneration() {
+        return stateNextGeneration;
+    }
 
     public void changeGeneration() {
         itsAlive = stateNextGeneration;
     }
 
-    public void setVerified(boolean val) {
-        verified = val;
-    }
-
-    public boolean itsVerified() {
-        return verified;
-    }
 }
