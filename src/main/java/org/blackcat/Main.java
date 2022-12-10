@@ -7,9 +7,9 @@ public class Main {
     public static void main(String[] args) {
 
         Game game = new Game(
-                new SizeWorld(20, 10),
-                100000,
-                3000
+                new SizeWorld(160, 80),
+                1000000,
+                30
         );
         game.play();
     }
